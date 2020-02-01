@@ -4,9 +4,9 @@ import numpy as np
 import os
 
 from sklearn.preprocessing import LabelEncoder, MinMaxScaler
-from keras.utils import to_categorical
+from tensorflow.keras.utils import to_categorical
 from sklearn.model_selection import train_test_split
-from keras.preprocessing.sequence import pad_sequences
+from tensorflow.keras.preprocessing.sequence import pad_sequences
 from sklearn.metrics import classification_report
 
 import random
@@ -94,4 +94,4 @@ def test_feature(Y, Y2, fourier = False):
         lr.fit(Y2, [np.argmax(y) for y in Y])
         pred = lr.predict(Y2)
 
-    print classification_report([np.argmax(y) for y in Y], pred)
+    print(classification_report([np.argmax(y) for y in Y], pred))
